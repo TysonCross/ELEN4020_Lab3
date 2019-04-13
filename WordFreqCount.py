@@ -37,11 +37,23 @@ class WordFreqCount(MRJob):
         yield None, (sum(values), key)
 
     def reducer_sort_counts(self, _, word_counts):
-        K = int(input("Enter the number of words (of highest frequency) you want: "))
+        ''' 
+        This function returns a specified number (K) of frequencies of words in a provided text
+        The number of words may be less or greater than K, depending if there are several words with the same number
+        of occurances in the text, or if there are fewer words than K in the text.
+        '''
+        K = int(input("Enter the number of frequencies of highest-word-occurance that you want: "))
         i = 0
+        last_freq = 0
+        current_freq = 0
         for count, key in sorted(word_counts, reverse=True):
+            if (i==K):
+                current_freq = int(count)
             if(i < K):
-                i+=1
+                last_freq = current_freq
+                current_freq = int(count)
+                if (last_freq != current_freq):
+                    i+=1
                 yield ('%d' % int(count), key)
 
 if __name__ == '__main__':
