@@ -4,7 +4,7 @@ import re
 
 WORD_RE = re.compile(r"[\w']+")
 
-class MRWordFreqCount(MRJob):
+class WordFreqCount(MRJob):
     FILES = ['text/stop_words.txt']
 
     def steps(self):
@@ -37,10 +37,13 @@ class MRWordFreqCount(MRJob):
         yield None, (sum(values), key)
 
     def reducer_sort_counts(self, _, word_counts):
-        for count, key in sorted(word_counts, reverse=False):
-            yield ('%d' % int(count), key)
-        
+        K = int(input("Enter the number of words (of highest frequency) you want: "))
+        i = 0
+        for count, key in sorted(word_counts, reverse=True):
+            if(i < K):
+                i+=1
+                yield ('%d' % int(count), key)
 
 if __name__ == '__main__':
-    MRWordFreqCount.run()
+    WordFreqCount.run()
     
