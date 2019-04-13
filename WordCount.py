@@ -5,6 +5,8 @@ import re
 WORD_RE = re.compile(r"[\w']+")
 
 class WordCount(MRJob):
+    '''Returns the number of occurances of words in the input text'''
+
     FILES = ['stop_words.txt']
     SORT_VALUES = True
 

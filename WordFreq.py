@@ -5,6 +5,8 @@ import re
 WORD_RE = re.compile(r"[\w']+")
 
 class WordFreqCount(MRJob):
+    '''Returns the top K frequency occurances of words in the input text'''
+
     FILES = ['stop_words.txt']
     SORT_VALUES = True
 
