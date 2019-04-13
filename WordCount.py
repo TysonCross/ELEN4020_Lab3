@@ -17,7 +17,7 @@ class WordCount(MRJob):
             ),
             MRStep(
                 reducer=self.reducer_sort_counts,
-            ),
+            )
         ]
 
     def mapper_init(self):
