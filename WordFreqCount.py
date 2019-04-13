@@ -54,7 +54,7 @@ class WordFreqCount(MRJob):
                 current_freq = int(count)
                 if (last_freq != current_freq):
                     i+=1
-                yield ('%d' % int(count), key)
+                yield (count, key)
 
 if __name__ == '__main__':
     WordFreqCount.run()

@@ -37,8 +37,8 @@ class WordCount(MRJob):
         yield None, (sum(values), key)
 
     def reducer_sort_counts(self, _, word_counts):
-        for count, key in sorted(word_counts, reverse=False):
-            yield ('%d' % int(count), key)
+        for count, key in sorted(word_counts, reverse=True):
+            yield (count, key)
 
 if __name__ == '__main__':
     WordCount.run()
