@@ -2,6 +2,7 @@ ab
 ac
 ad
 adhic
+adhuc
 aliqui
 aliquis
 an
@@ -88,4 +89,3 @@ tum
 ubi
 uel
 uero
-adhuc

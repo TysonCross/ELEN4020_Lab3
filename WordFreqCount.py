@@ -5,7 +5,25 @@ import re
 WORD_RE = re.compile(r"[\w']+")
 
 class WordFreqCount(MRJob):
-    FILES = ['text/stop_words.txt']
+    FILES = ['stop_words.txt']
+    SORT_VALUES = True
+
+    def configure_args(self):
+        super(WordFreqCount, self).configure_args()
+        self.add_passthru_arg(
+            '--limit',
+            metavar='K',
+            dest='K',
+            type=int,
+            default=10,
+            help='Input stop words text file')
+        self.add_file_arg(
+            '--stop-words',
+            metavar='STOP_WORDS_FILE',
+            dest='stop_words',
+            type=str,
+            default='stop_words.txt',
+            help='Number of highest occurances to return')
 
     def steps(self):
         return [
@@ -21,7 +39,7 @@ class WordFreqCount(MRJob):
         ]
 
     def mapper_init(self):
-        with open('stop_words.txt') as f:
+        with open(self.options.stop_words) as f:
             self.stop_words = set(line.strip() for line in f)
 
     def mapper_get_words(self, _, line):
@@ -38,11 +56,11 @@ class WordFreqCount(MRJob):
 
     def reducer_sort_counts(self, _, word_counts):
         ''' 
-        This function returns a specified number (K) of frequencies of words in a provided text
+        This function returns a command-line specified number of frequencies of words in a provided text
         The number of words may be less or greater than K, depending if there are several words with the same number
         of occurances in the text, or if there are fewer words than K in the text.
         '''
-        K = int(input("Enter the number of frequencies of highest-word-occurance that you want: "))
+        K = self.options.K
         i = 0
         last_freq = 0
         current_freq = 0
