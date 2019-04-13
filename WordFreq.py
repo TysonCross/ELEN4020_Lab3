@@ -5,7 +5,9 @@ import re
 WORD_RE = re.compile(r"[\w']+")
 
 class WordFreqCount(MRJob):
-    '''Returns the top K frequency occurances of words in the input text'''
+    ''' This function returns the top K frequency occurrences of words in a provided text.
+        The number of words may be greater or less than K, depending if there are several words with
+        the same number of occurrences in the text, or if there are fewer words than K in the text. '''
 
     FILES = ['stop_words.txt']
     SORT_VALUES = True
@@ -57,11 +59,6 @@ class WordFreqCount(MRJob):
         yield None, (sum(values), key)
 
     def reducer_sort_counts(self, _, word_counts):
-        ''' 
-        This function returns a command-line specified number of frequencies of words in a provided text
-        The number of words may be less or greater than K, depending if there are several words with the same number
-        of occurances in the text, or if there are fewer words than K in the text.
-        '''
         K = self.options.K
         i = 0
         last_freq = 0
