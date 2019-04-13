@@ -6,12 +6,12 @@ import re
 
 WORD_RE = re.compile(r"[\w']+")
 
-class WordLineFreq(MRJob):
+class WordInverseIndex(MRJob):
     FILES = ['stop_words.txt']
     SORT_VALUES = True
     
     def configure_args(self):
-        super(WordLineFreq, self).configure_args()
+        super(WordInverseIndex, self).configure_args()
         self.add_file_arg(  '--stop-words',
                             metavar='STOP_WORDS_FILE',
                             dest='stop_words',
@@ -54,5 +54,4 @@ class WordLineFreq(MRJob):
         yield (key, ','.join( str(a) for a in line ))
 
 if __name__ == '__main__':
-    WordLineFreq.run()
-    
+    WordInverseIndex.run()
