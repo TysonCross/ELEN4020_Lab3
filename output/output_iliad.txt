@@ -5,7 +5,6 @@
 445	"ships"
 434	"jove"
 420	"man"
-410	"said"
 410	"achilles"
 385	"spear"
 367	"men"

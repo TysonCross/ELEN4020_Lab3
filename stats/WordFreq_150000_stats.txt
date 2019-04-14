@@ -1,6 +1,6 @@
-WordFreq.py: (K=1500000) [microseconds]
-symbols_and_signs.txt: 				457.447 
-hamlet.txt: 						909.09 
-the_third_policemen.txt:			1469.445 
-iliad.txt : 						1824.246 
-in_remembrance_of_lost_time.txt: 	10204.561 
+# WordFreq.py: (K=1500000) [microseconds]
+symbols_and_signs.txt:              457.447 
+hamlet.txt:                         909.09 
+the_third_policemen.txt:            1469.445 
+iliad.txt :                         1824.246 
+in_search_of_lost_time.txt:         10204.561 

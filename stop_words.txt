@@ -153,6 +153,9 @@ $
 #
 \^
 |
+'
+'i
+'ll
 a
 about
 above
@@ -209,6 +212,7 @@ can
 cannot
 cant
 co
+come
 con
 could
 couldnt
@@ -310,6 +314,7 @@ latter
 latterly
 least
 less
+like
 ll
 ltd
 m
@@ -321,6 +326,7 @@ meanwhile
 might
 mill
 mine
+mme
 more
 moreover
 most
@@ -377,7 +383,9 @@ r
 rather
 re
 s
+said
 same
+say
 see
 seem
 seemed

@@ -364,6 +364,7 @@ latterly
 least
 less
 let
+like
 ll
 ltd
 m

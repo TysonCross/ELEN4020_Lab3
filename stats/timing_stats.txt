@@ -1,0 +1,57 @@
+# WordCount.py  [microseconds]
+symbols_and_signs.txt               440.84
+hamlet.txt                          914.695
+the_third_policemen.txt             1395.852
+iliad.txt                           1859.923
+republic.txt                        2507.712
+in_search_of_lost_time.txt          9937.674
+
+
+# WordFreq.py  (K=10) [microseconds]
+symbols_and_signs.txt               462.884
+hamlet.txt                          792.0
+the_third_policemen.txt             1339.687
+iliad.txt                           1770.054
+republic.txt                        2219.867
+in_search_of_lost_time.txt          9626.522
+
+
+
+# WordFreq.py  (K=20) [microseconds]
+symbols_and_signs.txt               463.551
+hamlet.txt                          850.391
+the_third_policemen.txt             1254.83
+iliad.txt                           1759.591
+republic.txt                        2260.222
+in_search_of_lost_time.txt          9765.32
+
+
+
+# WordFreq.py  (K=1500000) [microseconds]
+symbols_and_signs.txt               457.447
+hamlet.txt                          909.09
+the_third_policemen.txt             1469.445
+iliad.txt                           1824.246
+republic.txt                        2342.224
+in_search_of_lost_time.txt          10204.561
+
+
+
+# WordInverseIndex.py  (K=50) [microseconds]
+symbols_and_signs.txt               154.759
+hamlet.txt                          146.467
+the_third_policemen.txt             164.759
+iliad.txt                           154.376
+republic.txt                        146.879
+in_search_of_lost_time.txt          133.627
+
+
+
+# WordInverseIndex.py  (K=200000) [microseconds]
+symbols_and_signs.txt               176.882
+hamlet.txt                          500.264
+the_third_policemen.txt             799.887
+iliad.txt                           1419.142
+republic.txt                        1609.441
+in_search_of_lost_time.txt          10169.58
+

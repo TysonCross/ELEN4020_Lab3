@@ -1,12 +1,12 @@
 
 Symbols and Signs by Vladimir Nabokov
-symbols_and_signs.txt:
+symbols_and_signs.txt
 2230 Words
 206 Lines
 12580 Characters
 
 Hamlet by William Shakespeare
-hamlet.txt:
+hamlet.txt
 32065 Words
 4460 Lines
 191726 Characters
@@ -18,13 +18,19 @@ the_third_policemen.txt
 403872 Characters
 
 Iliad by Homer
-iliad.txt :
+iliad.txt
 153320 Words
 13440 Lines
 808161 Characters
 
-In Remembrance of Lost Time by Marcel Proust
-in_remembrance_of_lost_time.txt
+The Republic by Plato
+republic.txt
+217340 Words
+24295 Lines
+1195060 Characters
+
+In Search of Lost Time by Marcel Proust
+in_search_of_lost_time.txt
 1361977 Words
 116365 Lines
 7498967 Characters
