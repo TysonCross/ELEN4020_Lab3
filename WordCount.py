@@ -1,5 +1,7 @@
 from mrjob.job import MRJob
 from mrjob.step import MRStep
+from datetime import datetime
+import sys
 import re
 
 WORD_RE = re.compile(r"[\w']+")
@@ -54,4 +56,8 @@ class WordCount(MRJob):
             yield (count, key)
 
 if __name__ == '__main__':
+    start_time = datetime.now()
     WordCount.run()
+    end_time = datetime.now()
+    elapsed_time = (end_time - start_time)*1000
+    sys.stderr.write("Total Seconds WordCount.py: ({0}) microseconds\n".format(elapsed_time.total_seconds()))

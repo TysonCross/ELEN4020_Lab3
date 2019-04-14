@@ -1,0 +1,6 @@
+WordFreq.py: (K=20) [microseconds]
+symbols_and_signs.txt: 				463.551 
+hamlet.txt: 						850.391 
+the_third_policemen.txt: 			1254.83 
+iliad.txt : 						1759.591 
+in_remembrance_of_lost_time.txt: 	9765.32 

@@ -1,10 +1,12 @@
 from mrjob.job import MRJob
 from mrjob.step import MRStep
+from datetime import datetime
+import sys
 import re
 
 WORD_RE = re.compile(r"[\w']+")
 
-class WordFreqCount(MRJob):
+class WordFreq(MRJob):
     ''' This function returns the top K frequency occurrences of words in a provided text.
         The number of words may be greater or less than K, depending if there are several words with
         the same number of occurrences in the text, or if there are fewer words than K in the text. '''
@@ -13,7 +15,7 @@ class WordFreqCount(MRJob):
     SORT_VALUES = True
 
     def configure_args(self):
-        super(WordFreqCount, self).configure_args()
+        super(WordFreq, self).configure_args()
         self.add_passthru_arg(
             '--limit',
             metavar='K',
@@ -74,5 +76,8 @@ class WordFreqCount(MRJob):
                 yield (count, key)
 
 if __name__ == '__main__':
-    WordFreqCount.run()
-    
+    start_time = datetime.now()
+    WordFreq.run()
+    end_time = datetime.now()
+    elapsed_time = (end_time - start_time)*1000
+    sys.stderr.write("Total Seconds WordFreq.py: ({0}) microseconds\n".format(elapsed_time.total_seconds()))

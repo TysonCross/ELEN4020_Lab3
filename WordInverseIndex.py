@@ -1,6 +1,8 @@
 from mrjob.job import MRJob
 from mrjob.protocol import JSONValueProtocol
 from mrjob.step import MRStep
+from datetime import datetime
+import sys
 import re
 
 WORD_RE = re.compile(r"[\w']+")
@@ -53,4 +55,8 @@ class WordInverseIndex(MRJob):
         yield (key, ','.join( str(a) for a in line ))
 
 if __name__ == '__main__':
+    start_time = datetime.now()
     WordInverseIndex.run()
+    end_time = datetime.now()
+    elapsed_time = (end_time - start_time)*1000
+    sys.stderr.write("Total Seconds WordInverseIndex.py: ({0}) microseconds\n".format(elapsed_time.total_seconds()))

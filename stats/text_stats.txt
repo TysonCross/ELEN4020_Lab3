@@ -1,0 +1,30 @@
+
+Symbols and Signs by Vladimir Nabokov
+symbols_and_signs.txt:
+2230 Words
+206 Lines
+12580 Characters
+
+Hamlet by William Shakespeare
+hamlet.txt:
+32065 Words
+4460 Lines
+191726 Characters
+
+The Third Policeman by Flann O'Brien
+the_third_policemen.txt
+74728 Words
+3729 Lines
+403872 Characters
+
+Iliad by Homer
+iliad.txt :
+153320 Words
+13440 Lines
+808161 Characters
+
+In Remembrance of Lost Time by Marcel Proust
+in_remembrance_of_lost_time.txt
+1361977 Words
+116365 Lines
+7498967 Characters

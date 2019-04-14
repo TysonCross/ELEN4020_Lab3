@@ -1,0 +1,6 @@
+WordInverseIndex.py: (K=50) [microseconds]
+symbols_and_signs.txt: 				154.759 
+hamlet.txt: 						146.467 
+the_third_policemen.txt: 			164.759 
+iliad.txt : 						154.376 
+in_remembrance_of_lost_time.txt: 	133.627 

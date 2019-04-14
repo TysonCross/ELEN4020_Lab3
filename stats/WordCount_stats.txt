@@ -1,0 +1,6 @@
+WordCount.py: [microseconds]
+symbols_and_signs.txt: 				440.84 
+hamlet.txt:							914.695 
+the_third_policemen.txt: 			1395.852 
+iliad.txt : 						1859.923 
+in_remembrance_of_lost_time.txt: 	9937.674 
