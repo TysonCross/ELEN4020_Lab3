@@ -1,0 +1,56 @@
+# symbols_and_signs.txt
+WordCount                   440.84
+WordFreq(K=10)              462.884
+WordFreq(K=20)              463.551
+WordFreq(All)               457.447
+WordInverseIndex(50)        154.759
+WordInverseIndex(All)       176.882
+
+
+# hamlet.txt
+WordCount                   914.695
+WordFreq(K=10)              792.0
+WordFreq(K=20)              850.391
+WordFreq(All)               909.09
+WordInverseIndex(50)        146.467
+WordInverseIndex(All)       500.264
+
+
+
+# the_third_policemen.txt
+WordCount                   1395.852
+WordFreq(K=10)              1339.687
+WordFreq(K=20)              1254.83
+WordFreq(All)               1469.445
+WordInverseIndex(50)        164.759
+WordInverseIndex(All)       799.887
+
+
+
+# iliad.txt
+WordCount                   1859.923
+WordFreq(K=10)              1770.054
+WordFreq(K=20)              1759.591
+WordFreq(All)               1824.246
+WordInverseIndex(50)        154.376
+WordInverseIndex(All)       1419.142
+
+
+
+# republic.txt
+WordCount                   2507.712
+WordFreq(K=10)              2219.867
+WordFreq(K=20)              2260.222
+WordFreq(All)               2342.224
+WordInverseIndex(50)        146.879
+WordInverseIndex(All)       1609.441
+
+
+
+# in_search_of_lost_time.txt
+WordCount                   9937.674
+WordFreq(K=10)              9626.522
+WordFreq(K=20)              9765.32
+WordFreq(All)               10204.561
+WordInverseIndex(50)        133.627
+WordInverseIndex(All)       10169.58

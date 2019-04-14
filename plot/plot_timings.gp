@@ -23,14 +23,14 @@ set for [i=1:7] linetype i dashtype i
 
 # Titles
 set title noenhanced
-set ylabel "Time [ms]" offset 1.1 font "Helvetica-Oblique,18"
+set ylabel "Time [ms] " offset 1.1 font "Helvetica-Oblique,16"
 
 # Axes
 # remove border on top and right and set color to gray
 set style line 11 lc rgb '#808080' lt 1
 unset xtics
-set border 3 back ls 11
-set ytics nomirror out scale 1.25 font ", 10" offset 0.5
+set border 2 back ls 11
+set ytics nomirror out scale 1.25 font ", 10" offset 0.75
 set size 1.0,1.0
 set origin 0.0,0.0
 
@@ -44,18 +44,19 @@ set grid layerdefault   lt 0 linecolor 0 linewidth 0.500,  lt 0 linecolor 0 line
 
 #set key bmargin center horizontal Right noreverse noenhanced autotitle columnhead nobox
 #set key invert samplen 4 spacing 1 width 0 height 0 
-set key autotitle columnheader
-set key outside below center horizontal
+#set key autotitle columnheader
+#set key outside below center horizontal
+set key at 1,1.1e4 
 set style increment default
-set style histogram clustered gap 1 title textcolor lt -1 font ",11"  offset character 2, -2
+set style histogram clustered gap 2 title textcolor lt -1 font ",18"  offset character 2, -2
 set datafile missing '-'
 set style data histograms
-set xtics border in scale 1,0.5 mirror rotate by -45  autojustify
+set xtics border in scale 1,0.5 mirror font ", 10" rotate by -45  autojustify
 set xtics  norangelimit 
 set xtics   ()
 set xtic noenhanced
-set title "Algorithm Timings" 
-set xlabel "Algorithms" 
+#set title "Algorithm Timings" 
+#set xlabel "Algorithms" 
 set xrange [ * : * ] noreverse writeback
 set x2range [ * : * ] noreverse writeback
 set yrange [ * : * ] noreverse writeback
@@ -63,12 +64,14 @@ set y2range [ * : * ] noreverse writeback
 set zrange [ * : * ] noreverse writeback
 set cbrange [ * : * ] noreverse writeback
 set rrange [ * : * ] noreverse writeback
-set bmargin  15
+#set bmargin  12
+set datafile separator ";"
 
 # Plot
-plot newhistogram "Count", 				"<(sed -n '2,7p' 	../stats/timing_stats.txt)" using 2:xtic(1), \
-	 newhistogram "Freq (10)", 			"<(sed -n '11,16p' 	../stats/timing_stats.txt)" using 2:xtic(1), \
-	 newhistogram "Freq (20)", 			"<(sed -n '21,26p' 	../stats/timing_stats.txt)" using 2:xtic(1), \
-	 newhistogram "Freq (all)", 		"<(sed -n '31,36p' 	../stats/timing_stats.txt)" using 2:xtic(1), \
-	 newhistogram "InverseIndex (50)", 	"<(sed -n '41,46p' 	../stats/timing_stats.txt)" using 2:xtic(1), \
-	 newhistogram "InverseIndex (all)", "<(sed -n '51,56p' 	../stats/timing_stats.txt)" using 2:xtic(1)
+plot newhistogram "", "../stats/timings.csv" using "Count":xtic(1) t col, \
+															  '' u "Freq (K=10)" t col, \
+															  '' u "Freq (K=20)" t col, \
+															  '' u "Freq (All)" t col, \
+															  '' u "InverseIndex (50)" t col, \
+															  '' u "InverseIndex (All)" t col, \
+#

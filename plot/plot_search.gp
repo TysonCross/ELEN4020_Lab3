@@ -11,6 +11,7 @@ reset
 set terminal pdf size 6.0,4.0 enhanced color \
 font 'Helvetica,10' linewidth 2
 set output 'plot_search.pdf'
+set encoding utf8
 
 # Color definitions
 set colorsequence default
@@ -31,26 +32,36 @@ set title "Top Word Frequency in 'In Search of Lost Time'" font ",18"
 # remove border on top and right and set color to gray
 set style line 11 lc rgb '#808080' lt 1
 unset xtics
-set border 3 back ls 11
-set ytics nomirror out scale 1.25 font ", 10" offset 0.5
-set xtics nomirror out scale 1.25 font ", 10" offset 0,0.5 rotate by -45
+set border 2 back ls 11
+set ytics nomirror out scale 1.25 font ", 10" offset 0.75
 set size 1.0,1.0
 set origin 0.0,0.0
 
 # Grid
-#set style line 12 lc rgb'#808080' lt 0 lw 0.7
-#set grid back ls 12
-#unset grid
+set grid nopolar
 set grid y
 set auto y
+set grid noxtics nomxtics ytics nomytics noztics nomztics nortics nomrtics \
+ nox2tics nomx2tics noy2tics nomy2tics nocbtics nomcbtics
+set grid layerdefault   lt 0 linecolor 0 linewidth 0.500,  lt 0 linecolor 0 linewidth 0.500
 
 # labels
-set xtics border in scale 1,0.5 nomirror rotate by -90 offset character 0, 0, 0
 set key off
+set style increment default
+set style histogram clustered gap 2 title textcolor lt -1 font ",18"  offset character 2, -2
+set datafile missing '-'
+set style data histograms
+set xtics border in scale 1,0.5 mirror font ", 10" rotate by -45  autojustify
+set xtics  norangelimit 
+set xtics   ()
+set xtic noenhanced
+set xrange [ * : * ] noreverse writeback
+set x2range [ * : * ] noreverse writeback
+set yrange [ * : * ] noreverse writeback
+set y2range [ * : * ] noreverse writeback
+set zrange [ * : * ] noreverse writeback
+set cbrange [ * : * ] noreverse writeback
+set rrange [ * : * ] noreverse writeback
 
-#set multiplot
 plot "../output/output_search.txt" using 1:xticlabels(2) with histogram linecolor rgb "#6BA5D5"
-#unset multiplot
-
-set encoding utf8
-     
+ 
