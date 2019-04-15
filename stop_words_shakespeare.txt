@@ -289,7 +289,7 @@ exit
 f
 few
 fifteen
-fify
+fifty
 fill
 find
 fire

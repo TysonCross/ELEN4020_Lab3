@@ -52,7 +52,7 @@ set style increment default
 set style histogram clustered gap 2 title textcolor lt -1 font ",18"  offset character 2, -2
 set datafile missing '-'
 set style data histograms
-set xtics border in scale 1,0.5 mirror font ", 12" rotate by -45  autojustify
+set xtics border in scale 1,0.5 mirror font ", 14" rotate by -45  autojustify
 set xtics  norangelimit 
 set xtics   ()
 set xtic noenhanced

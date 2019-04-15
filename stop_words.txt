@@ -175,7 +175,6 @@ always
 am
 among
 amongst
-amoungst
 amount
 an
 and
@@ -250,7 +249,7 @@ except
 f
 few
 fifteen
-fify
+fifty
 fill
 find
 fire
