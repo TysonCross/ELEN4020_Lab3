@@ -10,7 +10,7 @@ The code requires [mrjob v0.6.7](https://pythonhosted.org/mrjob/) to be installe
 ### Setup ###
 Create and then source a virtual environment, then install the dependencies in the environment:
 
-            $ python3 -m venv /path/to/new/virtual/environment
+            $ python -m venv /path/to/new/virtual/environment
             $ source </path/to/new/virtual/environment>/bin/activate
             $ pip install -r requirements.txt
             
@@ -25,4 +25,4 @@ Return the top K frequencies of word occurance:
             
 Return an inverse index of the first K lines of text by word and the line index they occur on:
 
-            $ python WordInverseIndex.py <INPUT_TEXT_FILE> -q [--stop-word STOP_WORDS_FILE] [--limit K]
+            $ python WordInverseIndex.py <INPUT_TEXT_FILE> -q [--stop-word STOP_WORDS_FILE] [--limit K] [--index-limit L]

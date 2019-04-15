@@ -28,8 +28,8 @@ class WordInverseIndex(MRJob):
                                 default=50,
                                 help='Number of lines of the text to process')
         self.add_passthru_arg(  '--index-limit',
-                                metavar='I',
-                                dest='I',
+                                metavar='L',
+                                dest='L',
                                 type=int,
                                 default=50,
                                 help='Number of indexed lines per word to return')
