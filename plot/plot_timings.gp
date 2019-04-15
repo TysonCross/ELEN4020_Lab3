@@ -9,7 +9,7 @@ reset
 
 #eps
 set terminal pdf size 6.0,4.0 enhanced color \
-font 'Helvetica,10' linewidth 2
+font 'CMU Serif,10' linewidth 2
 set output 'plot_timing.pdf'
 set encoding utf8
 
@@ -23,7 +23,7 @@ set for [i=1:7] linetype i dashtype i
 
 # Titles
 set title noenhanced
-set ylabel "Time [ms] " offset 1.1 font "Helvetica-Oblique,16"
+set ylabel "Time [ms] " offset 1.1 font "CMU Serif-Italic,16"
 
 # Axes
 # remove border on top and right and set color to gray

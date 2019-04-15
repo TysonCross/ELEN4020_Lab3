@@ -9,7 +9,7 @@ reset
 
 #eps
 set terminal pdf size 6.0,4.0 enhanced color \
-font 'Helvetica,10' linewidth 2
+font 'CMU Serif,10' linewidth 2
 set output 'plot_hamlet.pdf'
 set encoding utf8
 
@@ -24,16 +24,16 @@ set style histogram
 set style data histogram
 
 # Titles
-set title "Top Word Frequency in 'Hamlet'" font ",18"
-#set ylabel "Frequency" offset 1.1 font "Helvetica-Oblique,18"
-#set xlabel "Words" offset 0,0.6 font "Helvetica-Oblique,18"
+#set title "Top Word Frequency in 'Hamlet'" font ",18"
+#set ylabel "Frequency" offset 1.1 font "CMU Serif-Italic,18"
+#set xlabel "Words" offset 0,0.6 font "CMU Serif-Italic,18"
 
 # Axes
 # remove border on top and right and set color to gray
 set style line 11 lc rgb '#808080' lt 1
 unset xtics
 set border 2 back ls 11
-set ytics nomirror out scale 1.25 font ", 10" offset 0.75
+set ytics nomirror out scale 1.25 font ", 12" offset 0.75
 set size 1.0,1.0
 set origin 0.0,0.0
 
@@ -51,7 +51,7 @@ set style increment default
 set style histogram clustered gap 2 title textcolor lt -1 font ",18"  offset character 2, -2
 set datafile missing '-'
 set style data histograms
-set xtics border in scale 1,0.5 mirror font ", 10" rotate by -45  autojustify
+set xtics border in scale 1,0.5 mirror font ", 12" rotate by -45  autojustify
 set xtics  norangelimit 
 set xtics   ()
 set xtic noenhanced
@@ -62,6 +62,7 @@ set y2range [ * : * ] noreverse writeback
 set zrange [ * : * ] noreverse writeback
 set cbrange [ * : * ] noreverse writeback
 set rrange [ * : * ] noreverse writeback
+set bmargin 6
 
 plot "../output/output_hamlet.txt" using 1:xticlabels(2) with histogram linecolor rgb "#6BA5D5"
 

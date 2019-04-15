@@ -1,6 +1,6 @@
 
 Symbols and Signs by Vladimir Nabokov
-symbols_and_signs.txt
+symbols.txt
 2230 Words
 206 Lines
 12580 Characters
@@ -12,7 +12,7 @@ hamlet.txt
 191726 Characters
 
 The Third Policeman by Flann O'Brien
-the_third_policemen.txt
+policeman.txt
 74728 Words
 3729 Lines
 403872 Characters
@@ -30,7 +30,7 @@ republic.txt
 1195060 Characters
 
 In Search of Lost Time by Marcel Proust
-in_search_of_lost_time.txt
+time.txt
 1361977 Words
 116365 Lines
 7498967 Characters
