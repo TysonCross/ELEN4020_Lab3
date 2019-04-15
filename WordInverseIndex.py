@@ -25,13 +25,13 @@ class WordInverseIndex(MRJob):
                                 metavar='K',
                                 dest='K',
                                 type=int,
-                                default=50,
+                                default=-1,
                                 help='Number of lines of the text to process')
         self.add_passthru_arg(  '--index-limit',
                                 metavar='L',
                                 dest='L',
                                 type=int,
-                                default=50,
+                                default=-1,
                                 help='Number of indexed lines per word to return')
 
     def steps(self):
@@ -53,14 +53,17 @@ class WordInverseIndex(MRJob):
     def mapper_raw(self, path, _):
             with open(path, 'r') as f:
                 for num, line in enumerate(f,1):
-                    if num >= self.options.K: break
+                    if (self.options.K!=-1) & (num >= self.options.K): break
                     for word in WORD_RE.findall(line):
                         word = word.lower()
                         if word not in self.stop_words:
                             yield (word.lower(), num) # optionally, can pass [num, line.rstrip()]
 
     def reducer(self, key, values):
-        lines_list = list(itertools.islice(values, self.options.I)) #[v for v in values]
+        if (self.options.L==-1):
+            lines_list = list(values)
+        else: 
+            lines_list = list(itertools.islice(values, self.options.L)) #
         yield None,(key, ','.join( str(line) for line in lines_list ))
     
     def reducer_sort_counts(self, _, values):

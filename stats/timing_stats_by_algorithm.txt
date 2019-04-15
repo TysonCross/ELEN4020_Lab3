@@ -47,11 +47,11 @@ in_search_of_lost_time.txt          133.627
 
 
 
-# WordInverseIndex.py  (K=200000) [microseconds]
-symbols_and_signs.txt               176.882
-hamlet.txt                          500.264
-the_third_policemen.txt             799.887
-iliad.txt                           1419.142
-republic.txt                        1609.441
-in_search_of_lost_time.txt          10169.58
+# WordInverseIndex.py  (All) [microseconds]
+symbols_and_signs.txt               208.349
+hamlet.txt                          472.583
+the_third_policemen.txt             777.027
+iliad.txt                           1201.292
+republic.txt                        1540.756
+in_search_of_lost_time.txt          8420.924
 
