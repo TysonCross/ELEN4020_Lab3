@@ -1,7 +1,7 @@
 from mrjob.job import MRJob
-from mrjob.protocol import JSONValueProtocol
 from mrjob.step import MRStep
 from datetime import datetime
+import itertools
 import sys
 import re
 
@@ -16,17 +16,23 @@ class WordInverseIndex(MRJob):
     def configure_args(self):
         super(WordInverseIndex, self).configure_args()
         self.add_file_arg(  '--stop-words',
-                            metavar='STOP_WORDS_FILE',
-                            dest='stop_words',
-                            type=str,
-                            default='stop_words.txt',
-                            help='Input stop words text file')
+                                metavar='STOP_WORDS_FILE',
+                                dest='stop_words',
+                                type=str,
+                                default='stop_words.txt',
+                                help='Input stop words text file')
         self.add_passthru_arg(  '--limit',
                                 metavar='K',
                                 dest='K',
                                 type=int,
                                 default=50,
-                                help='Number of lines of the text to return')
+                                help='Number of lines of the text to process')
+        self.add_passthru_arg(  '--index-limit',
+                                metavar='I',
+                                dest='I',
+                                type=int,
+                                default=50,
+                                help='Number of indexed lines per word to return')
 
     def steps(self):
         return [
@@ -34,6 +40,9 @@ class WordInverseIndex(MRJob):
                 mapper_init=self.mapper_init,
                 mapper_raw=self.mapper_raw,
                 reducer=self.reducer,
+            ),
+            MRStep(
+                reducer=self.reducer_sort_counts,
             )
         ]
 
@@ -43,16 +52,20 @@ class WordInverseIndex(MRJob):
 
     def mapper_raw(self, path, _):
             with open(path, 'r') as f:
-                for num, line in enumerate(f):
-                    if num>= self.options.K: break
-                    for word in line.rstrip().split():
+                for num, line in enumerate(f,1):
+                    if num >= self.options.K: break
+                    for word in WORD_RE.findall(line):
                         word = word.lower()
                         if word not in self.stop_words:
-                            yield (word.lower(), num) # optionally, can pass [num+1, line.rstrip()]
+                            yield (word.lower(), num) # optionally, can pass [num, line.rstrip()]
 
     def reducer(self, key, values):
-        line = [v for v in values]
-        yield (key, ','.join( str(a) for a in line ))
+        lines_list = list(itertools.islice(values, self.options.I)) #[v for v in values]
+        yield None,(key, ','.join( str(line) for line in lines_list ))
+    
+    def reducer_sort_counts(self, _, values):
+        for key, lines in sorted(values):
+            yield (key, lines)
 
 if __name__ == '__main__':
     start_time = datetime.now()
