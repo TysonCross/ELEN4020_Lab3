@@ -1,11 +1,10 @@
 # <center>ELEN4020A Lab 3 Exercises </center>
--
 ###### Tyson Cross       1239448
 ###### Michael Nortje    1389486
 ###### Josh Isserow      675720
 
 Lab 3 exercises were written in Python 3.7.2 <br> <br>
-The code requires [mrjob v0.6.7](https://pythonhosted.org/mrjob/) to be installed. A requirements.txt file is provided for convenience. 
+The code requires [mrjob v0.6.7+](https://pythonhosted.org/mrjob/) to be installed. A requirements.txt file is provided for convenience. 
 
 ### Setup ###
 Create and then source a virtual environment, then install the dependencies in the environment:
