@@ -718,3 +718,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+Report/
+Report
+Research/
+Research
