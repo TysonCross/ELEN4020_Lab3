@@ -1,0 +1,18 @@
+ELEN4020A Lab Exercise 3
+GROUP 8
+
+Tyson Cross       1239448
+Michael Nortje    1389486
+Josh Isserow      675720
+
+Please find the git repo here: https://github.com/TysonCross/ELEN4020_Lab3
+
+If you are collaborator on the Private Github repo, you can clone the repository directly, using your SSH and passphrase:
+
+git clone git@github.com:TysonCross/ELEN4020_Lab3.git
+
+or via HTTPS: git clone https://github.com/TysonCross/ELEN4020_Lab3
+
+Alternatively, please download the github repo via HTTPS: https://github.com/TysonCross/ELEN4020_Lab3/archive/master.zip
+
+Please find instructions to build and run the code in README.md
